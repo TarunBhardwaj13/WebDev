@@ -23,14 +23,37 @@
 //    console.log("Running server on:http://127.0.0.1:3000")
 // })
 
+
 const express=require("express");
+
 const app=express();
 app.get("/",(req,res)=>{
-    res.send("Welcome to express server");
+    res.send("Welcome to express js in GET");
 })
+
+app.get("/product/:id/:name",(req,res)=>{
+    const PID=req.query.id;
+    const name=req.query.name;
+    res.send("product ID:"+PID+ "<br>Name:"+name);
+})
+
+app.post("/",(req,res)=>{
+    res.send("Welcome to express js in POST");
+})
+
+app.put("/",(req,res)=>{
+    res.send("Welcome to express js in PUT");
+})
+
+app.delete("/",(req,res)=>{
+    res.send("Welcome to express js in DELETE");
+})
+
 app.listen(3001,(error)=>{
     if(error){
         console.log(error)
     }
     console.log("Running server on:http://127.0.0.1:3001")
-})
+}
+)
+
