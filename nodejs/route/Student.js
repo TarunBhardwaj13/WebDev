@@ -9,9 +9,10 @@ const checkAge = (req, res, next) => {
         console.log("Age verified!");
         next();
     } else {
-        
+
         res.send("Access denied! You must be 18 or older.");
     }
+    
 };
 
 app.get("/home", checkAge, (req, res) => {
