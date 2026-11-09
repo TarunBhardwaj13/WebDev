@@ -13,6 +13,7 @@ const checkAge = (req, res, next) => {
         res.send("Access denied! You must be 18 or older.");
     }
     
+    
 };
 
 app.get("/home", checkAge, (req, res) => {
